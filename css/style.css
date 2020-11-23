@@ -1,0 +1,86 @@
+#addForm {
+    border: 1px solid black;
+    padding: 10px;
+    width: 22%;
+    margin-bottom: 10px;
+}
+
+select {
+    height: 21px;
+}
+
+.task {
+    border: 1px solid black;
+    padding: 10px;
+    width: 22%;
+    margin-bottom: 10px;
+}
+
+.date_text {
+    font-size: 12px;
+    opacity: .5;
+}
+
+button {
+    margin-top: 10px;
+}
+
+.blue {
+    border-top: 5px solid lightskyblue;
+}
+
+.red {
+    border-top: 5px solid red;
+}
+
+.orange {
+    border-top: 5px solid orange;
+}
+
+.yellow {
+    border-top: 5px solid yellow;
+}
+
+.green {
+    border-top: 5px solid greenyellow;
+}
+
+.darkblue {
+    border-top: 5px solid blue;
+}
+
+.violet {
+    border-top: 5px solid blueviolet;
+}
+
+.red_option {
+    background: red;
+}
+
+.orange_option {
+    background: orange;
+}
+
+.yellow_option {
+    background: yellow;
+}
+
+.green_option {
+    background: greenyellow;
+}
+
+.blue_option {
+    background: lightskyblue;
+}
+
+.darkblue_option {
+    background: darkblue;
+}
+
+.violet_option {
+    background: violet;
+}
+
+.crossed {
+    text-decoration: line-through;
+}

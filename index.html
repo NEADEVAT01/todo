@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Todo</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script defer src="js/main.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+<script type="text/x-template" id="task-template">
+    <div class='task'>
+        <span>{{name}}</span>
+        <button>✎</button>
+        <button @click='deleteTask(index)'>✘</button>
+        <br>
+        <input placeholder="Add task..." v-model="this.new_smallTask"
+               v-on:keyup.enter='small_tasks.push({name: this.new_smallTask, crossed: false});
+        this.new_smallTask = ""' required>
+        <button v-on:click='small_tasks.push({name: this.new_smallTask, crossed: false});
+        this.new_smallTask = ""'>✚
+        </button>
+        <br>
+        <ul>
+            <li v-for="(small_task,index) in small_tasks">
+                <span :class="{crossed:small_task.crossed}"
+                      @click="small_task.crossed=!small_task.crossed">{{small_task.name}}</span>
+                <button>✎</button>
+                <button @click="small_tasks.splice(index,1)">✘</button>
+            </li>
+        </ul>
+        <br>
+        <span class='date_text'>{{date}}</span>
+    </div>
+</script>
+
+<div id="Todo">
+    <div id="addForm">
+        <input placeholder="Type note..." v-model="new_name" v-on:keyup.enter='addTask' required>
+        <select v-model="new_color">
+            <option class="red_option" value="red" selected></option>
+            <option class="orange_option" value="orange"></option>
+            <option class="yellow_option" value="yellow"></option>
+            <option class="green_option" value="green"></option>
+            <option class="blue_option" value="blue"></option>
+            <option class="darkblue_option" value="darkblue"></option>
+            <option class="violet_option" value="violet"></option>
+        </select>
+        <button @click="addTask">Добавить</button>
+    </div>
+
+    <task v-for="(task, index) in tasks" :name="task.title" :date="task.date" :key="index"
+          v-bind:class="task.color" :id="task.id" :small_tasks="task.smallTasks"></task>
+</div>
+</body>
+</html>
